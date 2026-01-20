@@ -34,7 +34,7 @@ export function AdminSidebar() {
         <aside className="w-64 bg-card border-r border-border flex flex-col h-screen fixed left-0 top-0">
             <div className="p-6 border-b border-border flex items-center gap-2">
                 <img src="/logo.png" alt="CoinGroww" className="w-10 h-10" />
-                <h1 className="text-xl font-bold font-sans tracking-tight text-white">COINGROWW</h1>
+                <h1 className="text-xl font-bold font-poiret tracking-tight text-white">CoinGroww</h1>
             </div>
 
             <div className="px-4 py-2">

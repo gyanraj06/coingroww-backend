@@ -18,6 +18,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-chakra-petch)"],
+        poiret: ["'Poiret One'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

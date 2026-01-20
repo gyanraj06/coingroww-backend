@@ -12,7 +12,7 @@ const chakraPetch = Chakra_Petch({
 
 export const metadata: Metadata = {
     title: "Coingroww Admin Page",
-    description: "Admin portal for COINGROWW",
+    description: "Admin portal for CoinGroww",
     icons: {
         icon: "/logo.png",
         shortcut: "/logo.png",
