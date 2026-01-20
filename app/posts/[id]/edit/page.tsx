@@ -7,6 +7,7 @@ import { ChevronLeft, Save, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { ImageUpload } from "@/components/image-upload";
+import { RichTextEditor } from "@/components/rich-text-editor";
 
 const SECTIONS = ["News", "Markets", "Top", "Press Release"];
 
@@ -197,16 +198,13 @@ export default function EditPostPage({ params }: { params: { id: string } }) {
                             <label htmlFor="content" className="text-sm font-medium leading-none">
                                 Content (Markdown/HTML)
                             </label>
-                            <textarea
-                                id="content"
-                                name="content"
-                                rows={20}
-                                required
-                                value={formData.content}
-                                onChange={handleInputChange}
-                                className="flex min-h-[80px] w-full rounded-md border border-input bg-card px-3 py-2 text-sm font-mono ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                                placeholder="Write your article content here..."
-                            />
+                            <div className="min-h-[400px]">
+                                <RichTextEditor
+                                    content={formData.content}
+                                    onChange={(html: string) => setFormData(prev => ({ ...prev, content: html }))}
+                                    placeholder="Write your article content here..."
+                                />
+                            </div>
                         </div>
                     </div>
 
