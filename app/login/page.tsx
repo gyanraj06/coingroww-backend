@@ -47,7 +47,7 @@ export default function LoginPage() {
             <div className="w-full max-w-md space-y-8">
                 <div className="text-center space-y-2">
                     <div className="flex justify-center mb-6">
-                        <img src="/logo.png" alt="CoinGroww" className="w-auto h-20" />
+                        <h1 className="text-4xl font-bold font-sans tracking-tight text-foreground">COINGROWW</h1>
                     </div>
                     <h1 className="text-3xl font-bold tracking-tight text-foreground">
                         Admin Portal
