@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { ChevronLeft, Save, Loader2 } from "lucide-react";
@@ -18,7 +18,15 @@ const SECTION_TAGS: Record<string, string[]> = {
     "Press Release": ["Press Release"]
 };
 
-export default function NewPostPage() {
+export default function NewPostPageWrapper() {
+    return (
+        <React.Suspense fallback={<div className="flex items-center justify-center p-8"><Loader2 className="w-8 h-8 animate-spin text-primary" /></div>}>
+            <NewPostForm />
+        </React.Suspense>
+    );
+}
+
+function NewPostForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const urlSection = searchParams.get("section");

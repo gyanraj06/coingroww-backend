@@ -1,10 +1,10 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/auth/change-password/route": "app/api/auth/change-password/route.js",
   "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/api/auth/logout/route": "app/api/auth/logout/route.js",
   "/login/page": "app/login/page.js",
+  "/api/auth/change-password/route": "app/api/auth/change-password/route.js",
   "/page": "app/page.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
   "/posts/[id]/edit/page": "app/posts/[id]/edit/page.js",
   "/posts/new/page": "app/posts/new/page.js",
   "/settings/page": "app/settings/page.js",
