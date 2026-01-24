@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { FileText, Settings, LogOut, TrendingUp, Newspaper, BarChart3, Megaphone, Flame } from "lucide-react";
+import { FileText, Settings, LogOut, TrendingUp, Newspaper, BarChart3, Megaphone, Flame, Calendar } from "lucide-react";
 import { clsx } from "clsx";
 
 const navItems = [
@@ -11,6 +11,7 @@ const navItems = [
     { href: "/posts?section=Markets", label: "Markets", icon: TrendingUp },
     { href: "/posts?section=Top", label: "Top", icon: BarChart3 },
     { href: "/posts?section=Press Release", label: "Press Release", icon: Megaphone },
+    { href: "/events", label: "Events", icon: Calendar },
     { href: "/trending", label: "Trending", icon: Flame },
     { href: "/settings", label: "Settings", icon: Settings },
 

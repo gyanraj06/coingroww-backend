@@ -12,7 +12,7 @@ import { RichTextEditor } from "@/components/rich-text-editor";
 const SECTIONS = ["News", "Markets", "Top", "Press Release"];
 
 const SECTION_TAGS: Record<string, string[]> = {
-    "News": ["Bitcoin", "Ethereum", "Altcoins", "DeFi", "Blockchain", "NFTs", "GameFi", "Sponsored", "P/R"],
+    "News": ["Bitcoin", "Ethereum", "Altcoins", "DeFi", "Blockchain", "NFTs", "GameFi", "Sponsored", ""],
     "Markets": ["Market Release", "Crypto Price", "Crypto Stock", "Industry"],
     "Top": ["Coins", "Exchange", "Casinos", "Wallets", "Mining", "Bots", "DeFi", "NFTs"],
     "Press Release": ["Press Release"]
@@ -40,7 +40,8 @@ function NewPostForm() {
         category: "Bitcoin",
         image_url: "",
         is_featured: false,
-        is_editor_pick: false
+        is_editor_pick: false,
+        author_name: ""
     });
 
     // Initialize section from URL if present
@@ -103,6 +104,7 @@ function NewPostForm() {
                     image_url: formData.image_url,
                     is_featured: formData.is_featured,
                     is_editor_pick: formData.is_editor_pick,
+                    author_name: formData.author_name || null,
                 },
             ]);
 
@@ -150,6 +152,21 @@ function NewPostForm() {
                                 onChange={handleInputChange}
                                 className="flex h-12 w-full rounded-md border border-input bg-card px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 placeholder="Enter article title..."
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <label htmlFor="author_name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                Author Name
+                            </label>
+                            <input
+                                id="author_name"
+                                name="author_name"
+                                type="text"
+                                value={formData.author_name}
+                                onChange={handleInputChange}
+                                className="flex h-12 w-full rounded-md border border-input bg-card px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Enter author name..."
                             />
                         </div>
 

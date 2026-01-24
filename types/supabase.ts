@@ -54,6 +54,45 @@ export type Database = {
         };
         Relationships: [];
       };
+      events: {
+        Row: {
+          id: string;
+          title: string;
+          summary: string | null;
+          place: string | null;
+          date: string | null;
+          event_link: string | null;
+          banner_image_url: string | null;
+          logo_image_url: string | null;
+          created_at: string | null;
+          updated_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          title: string;
+          summary?: string | null;
+          place?: string | null;
+          date?: string | null;
+          event_link?: string | null;
+          banner_image_url?: string | null;
+          logo_image_url?: string | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          title?: string;
+          summary?: string | null;
+          place?: string | null;
+          date?: string | null;
+          event_link?: string | null;
+          banner_image_url?: string | null;
+          logo_image_url?: string | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;

@@ -12,7 +12,7 @@ import { RichTextEditor } from "@/components/rich-text-editor";
 const SECTIONS = ["News", "Markets", "Top", "Press Release"];
 
 const SECTION_TAGS: Record<string, string[]> = {
-    "News": ["Bitcoin", "Ethereum", "Altcoins", "DeFi", "Blockchain", "NFTs", "GameFi", "Sponsored", "P/R"],
+    "News": ["Bitcoin", "Ethereum", "Altcoins", "DeFi", "Blockchain", "NFTs", "GameFi", "Sponsored", ""],
     "Markets": ["Market Release", "Crypto Price", "Crypto Stock", "Industry"],
     "Top": ["Coins", "Exchange", "Casinos", "Wallets", "Mining", "Bots", "DeFi", "NFTs"],
     "Press Release": ["Press Release"]
@@ -31,7 +31,8 @@ export default function EditPostPage({ params }: { params: { id: string } }) {
         category: "Bitcoin",
         image_url: "",
         is_featured: false,
-        is_editor_pick: false
+        is_editor_pick: false,
+        author_name: ""
     });
 
     useEffect(() => {
@@ -57,7 +58,8 @@ export default function EditPostPage({ params }: { params: { id: string } }) {
                 category: data.category,
                 image_url: data.image_url || "",
                 is_featured: data.is_featured || false,
-                is_editor_pick: data.is_editor_pick || false
+                is_editor_pick: data.is_editor_pick || false,
+                author_name: (data as any).author_name || ""
             });
             setFetching(false);
         }
@@ -104,6 +106,7 @@ export default function EditPostPage({ params }: { params: { id: string } }) {
                     image_url: formData.image_url,
                     is_featured: formData.is_featured,
                     is_editor_pick: formData.is_editor_pick,
+                    author_name: formData.author_name || null,
                 })
                 .eq("id", params.id);
 
@@ -159,6 +162,21 @@ export default function EditPostPage({ params }: { params: { id: string } }) {
                                 onChange={handleInputChange}
                                 className="flex h-12 w-full rounded-md border border-input bg-card px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                                 placeholder="Enter article title..."
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <label htmlFor="author_name" className="text-sm font-medium leading-none">
+                                Author Name
+                            </label>
+                            <input
+                                id="author_name"
+                                name="author_name"
+                                type="text"
+                                value={formData.author_name}
+                                onChange={handleInputChange}
+                                className="flex h-12 w-full rounded-md border border-input bg-card px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                placeholder="Enter author name..."
                             />
                         </div>
 
